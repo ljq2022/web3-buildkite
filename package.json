@@ -1,0 +1,65 @@
+{
+  "name": "sample-ts-server",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "IS_TEST=truthy NODE_PATH=./ jest --config ./src/tests/jest.config.json --passWithNoTests --maxWorkers=8 --verbose --silent",
+    "start": "IS_TEST='' IS_DEV='' node -r ./prod-paths.js build/src/index.js",
+    "dev": "cross-env IS_TEST='' IS_DEV=truthy NODE_PATH=./ nodemon src/index.ts",
+    "build": "tsc --p ./tsconfig.prod.json || true"
+  },
+  "dependencies": {
+    "@babel/preset-typescript": "^7.10.4",
+    "@project-serum/anchor": "^0.23.0",
+    "@solana/web3.js": "^1.37.1",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "firebase-admin": "^8.12.1",
+    "firebase-functions": "^3.7.0",
+    "firebase-mock": "^2.3.2",
+    "fs": "0.0.1-security",
+    "jest-cli": "^26.0.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.19",
+    "mocha": "^7.2.0",
+    "moment": "^2.26.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "slack-node": "^0.1.8",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "typescript": "^3.9.7",
+    "uuid": "^8.3.2"
+  },
+  "description": "",
+  "directories": {
+    "test": "tests"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.2.2",
+    "cross-env": "^7.0.2",
+    "jest": "^26.1.0",
+    "tsconfig-paths": "^3.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andylebo20/sample-ts-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andylebo20/sample-ts-server/issues"
+  },
+  "homepage": "https://github.com/andylebo20/sample-ts-server#readme"
+}

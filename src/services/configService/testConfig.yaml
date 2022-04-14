@@ -1,0 +1,24 @@
+steps:
+  - address: A
+    function: split
+    input:
+      - addr1
+    output:
+      - logs
+      - addr1
+      - addr2
+  - wait: true
+  - address: B
+    function: random
+    input:
+      - addr1
+      - addr2
+    output:
+      - logs
+  - address: C
+    function: destroy
+    input:
+      - addr1
+      - addr2
+    output:
+      - logs
